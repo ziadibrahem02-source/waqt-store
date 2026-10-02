@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وقت | WAQT Timepieces</title>
+    <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ملف الـ CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="navbar">
+     <div class="logo-text" id="waqt-logo" style="cursor: pointer;">
+    <img src="https://i.postimg.cc/ZnTn0gkN/Minimalist-wqt-WAQT-Logo.png?v=2" alt="WAQT">
+    <span>WAQT <small>TIMEPIECES</small></span>
+</div>
+        </div>
+        
+        <nav class="nav-center">
+            <a href="#home" class="lang-text" data-ar="الرئيسية" data-en="HOME">HOME</a>
+            <a href="#collection" class="lang-text" data-ar="المتجر" data-en="SHOP">SHOP</a>
+            <a href="#about" class="lang-text" data-ar="من نحن" data-en="ABOUT">ABOUT</a>
+            <a href="#" id="contact-btn" class="lang-text" data-ar="اتصل بنا" data-en="CONTACT">CONTACT</a>
+        </nav>
+
+        <!-- في النافبار فوق -->
+<div class="nav-right">
+    <button id="lang-btn" class="lang-toggle-btn">EN</button>
+    <a href="#" id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="#" id="user-icon"><i class="fa-regular fa-user"></i></a>
+    <a href="#" id="cart-icon" class="cart-icon"><i class="fa-solid fa-bag-shopping"></i> <span class="cart-count">0</span></a>
+</div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="https://i.postimg.cc/ZnTn0gkN/Minimalist-wqt-WAQT-Logo.png?v=2" alt="WAQT">
+                <span class="brand-sub">W A Q T <hr><span>TIMEPIECES</span></span>
+            </div>
+            <p class="hero-tagline lang-text" data-ar="أكثر من مجرد وقت... إنه نمط حياة" data-en="MORE THAN JUST TIME<br>IT'S A LIFESTYLE">أكثر من مجرد وقت... إنه نمط حياة</p>
+            <a href="#collection" class="btn-rolex lang-text" data-ar="اكتشف المجموعة <i class='fa-solid fa-chevron-right'></i>" data-en="SHOP NOW <i class='fa-solid fa-chevron-right'></i>">اكتشف المجموعة <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION (نبذة عن البراند) ================= -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2 class="lang-text" data-ar="عن براند وقت" data-en="ABOUT WAQT">عن براند وقت</h2>
+            <p class="lang-text" 
+               data-ar="تأسست 'وقت' لتكون الرمز الحقيقي للفخامة والأناقة العصرية في عالم الساعات. نحن نؤمن بأن الساعة ليست مجرد أداة لمعرفة الوقت، بل هي انعكاس لشخصيتك وهويتك الفريدة. نقدم تشكيلة مختارة بعناية فائقة لتلبي تطلعات عشاق التميز، مع دقة متناهية وتصميمات تلفت الأنظار في كل لحظة." 
+               data-en="WAQT was established to be the true symbol of luxury and modern elegance in the world of timepieces. We believe that a watch is not merely a tool to tell time, but a reflection of your unique personality and identity. We offer a carefully curated collection to meet the aspirations of excellence seekers, with ultimate precision and eye-catching designs for every moment.">
+               تأسست 'وقت' لتكون الرمز الحقيقي للفخامة والأناقة العصرية في عالم الساعات. نحن نؤمن بأن الساعة ليست مجرد أداة لمعرفة الوقت، بل هي انعكاس لشخصيتك وهويتك الفريدة. نقدم تشكيلة مختارة بعناية فائقة لتلبي تطلعات عشاق التميز، مع دقة متناهية وتصميمات تلفت الأنظار في كل لحظة.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= QUICK CATEGORIES ================= -->
+    <div class="quick-categories">
+        <div class="cat-item">
+            <i class="fa-solid fa-clock"></i>
+            <span class="lang-text" data-ar="ساعات رجالية" data-en="MEN'S WATCHES">ساعات رجالية</span>
+        </div>
+        <div class="cat-item">
+            <i class="fa-regular fa-clock"></i>
+            <span class="lang-text" data-ar="ساعات نسائية" data-en="WOMEN'S WATCHES">ساعات نسائية</span>
+        </div>
+        <div class="cat-item">
+            <i class="fa-solid fa-star"></i>
+            <span class="lang-text" data-ar="أحدث الإصدارات" data-en="NEW ARRIVALS">أحدث الإصدارات</span>
+        </div>
+        <div class="cat-item">
+            <i class="fa-solid fa-fire"></i>
+            <span class="lang-text" data-ar="الأكثر مبيعاً" data-en="BEST SELLERS">الأكثر مبيعاً</span>
+        </div>
+    </div>
+
+    <!-- ================= FEATURED COLLECTION ================= -->
+    <section class="collection-section" id="collection">
+    <h2 class="section-title lang-text" data-ar="استكشف مجموعة وقت" data-en="FEATURED COLLECTION">استكشف مجموعة وقت</h2>
+
+        <div class="products-grid" id="products-grid">
+    <!-- Product 1 -->
+    <div class="rolex-card" data-name="SEIKO 5" data-price="4250" data-img="assets/images/watch1.png">
+        <div class="product-img">
+            <img src="assets/images/watch1.png" alt="Seiko 5">
+        </div>
+        <h3>SEIKO 5</h3>
+        <p class="lang-text" data-ar="أوتوماتيك" data-en="Automatic">أوتوماتيك</p>
+        <div class="price">EGP 4,250</div>
+        <button class="add-to-cart-btn lang-text" data-ar="أضف للسلة <i class='fa-solid fa-bag-shopping'></i>" data-en="ADD TO CART <i class='fa-solid fa-bag-shopping'></i>">أضف للسلة <i class="fa-solid fa-bag-shopping"></i></button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="rolex-card" data-name="TISSOT CLASSIC" data-price="6750" data-img="assets/images/watch2.png">
+        <div class="product-img">
+            <img src="assets/images/watch2.png" alt="Tissot Classic">
+        </div>
+        <h3>TISSOT CLASSIC</h3>
+        <p class="lang-text" data-ar="كوارتز" data-en="Quartz">كوارتز</p>
+        <div class="price">EGP 6,750</div>
+        <button class="add-to-cart-btn lang-text" data-ar="أضف للسلة <i class='fa-solid fa-bag-shopping'></i>" data-en="ADD TO CART <i class='fa-solid fa-bag-shopping'></i>">أضف للسلة <i class="fa-solid fa-bag-shopping"></i></button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="rolex-card" data-name="ROLEX DATEJUST" data-price="32500" data-img="assets/images/watch3.png">
+        <div class="product-img">
+            <img src="assets/images/watch3.png" alt="Rolex Datejust">
+        </div>
+        <h3>ROLEX DATEJUST</h3>
+        <p class="lang-text" data-ar="أوتوماتيك" data-en="Automatic">أوتوماتيك</p>
+        <div class="price">EGP 32,500</div>
+        <button class="add-to-cart-btn lang-text" data-ar="أضف للسلة <i class='fa-solid fa-bag-shopping'></i>" data-en="ADD TO CART <i class='fa-solid fa-bag-shopping'></i>">أضف للسلة <i class="fa-solid fa-bag-shopping"></i></button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="rolex-card" data-name="CASIO EDIFICE" data-price="5200" data-img="assets/images/watch4.png">
+        <div class="product-img">
+            <img src="assets/images/watch4.png" alt="Casio Edifice">
+        </div>
+        <h3>CASIO EDIFICE</h3>
+        <p class="lang-text" data-ar="كرونوغراف" data-en="Chronograph">كرونوغراف</p>
+        <div class="price">EGP 5,200</div>
+        <button class="add-to-cart-btn lang-text" data-ar="أضف للسلة <i class='fa-solid fa-bag-shopping'></i>" data-en="ADD TO CART <i class='fa-solid fa-bag-shopping'></i>">أضف للسلة <i class="fa-solid fa-bag-shopping"></i></button>
+    </div>
+</div>
+
+<!-- مودال العربية (Cart Modal) والبحث وتسجيل الدخول -->
+<div id="cartModal" class="modal">
+    <div class="modal-content cart-modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 class="lang-text" data-ar="عربة المشتريات" data-en="YOUR SHOPPING CART">عربة المشتريات</h3>
+        <div id="cart-items-container">
+            <p class="empty-cart-msg">عربة التسوق فارغة حالياً.</p>
+        </div>
+        <div class="cart-total">
+            <span>الإجمالي: <strong id="total-price">0</strong> EGP</span>
+        </div>
+    </div>
+</div>
+
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal search-close">&times;</span>
+        <h3>بحث في الساعات</h3>
+        <input type="text" placeholder="ابحث عن اسم الساعة..." class="search-input">
+    </div>
+</div>
+
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal user-close">&times;</span>
+        <h3>حساب المستخدم</h3>
+        <p style="color: #aaa; margin: 15px 0;">قم بتسجيل الدخول لمتابعة طلباتك.</p>
+        <button class="checkout-btn" style="width: 100%;">تسجيل الدخول</button>
+    </div>
+</div>
+    </section>
+
+    <!-- ================= WHY CHOOSE WAQT ================= -->
+    <section class="why-choose">
+        <div class="why-images">
+            <img src="assets/images/box1.png" alt="Waqt Box Open">
+            <img src="assets/images/box2.png" alt="Waqt Box Closed">
+        </div>
+        <div class="why-content">
+            <h2 class="lang-text" data-ar="لماذا تختار وقت؟" data-en="WHY CHOOSE WAQT?">لماذا تختار وقت؟</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <i class="fa-solid fa-shield-check"></i>
+                    <div>
+                        <h4 class="lang-text" data-ar="منتجات أصلية" data-en="Original Products">منتجات أصلية</h4>
+                        <p class="lang-text" data-ar="أصالة مضمونة 100%" data-en="100% Authentic">أصالة مضمونة 100%</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-headset"></i>
+                    <div>
+                        <h4 class="lang-text" data-ar="دعم عملاء سريع" data-en="Fast Customer Support">دعم عملاء سريع</h4>
+                        <p class="lang-text" data-ar="موجودون لأجلك دائماً" data-en="Always Here for You">موجودون لأجلك دائماً</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <div>
+                        <h4 class="lang-text" data-ar="الدفع عند الاستلام" data-en="Cash on Delivery">الدفع عند الاستلام</h4>
+                        <p class="lang-text" data-ar="(مع عربون لتأكيد الشحن)" data-en="(With Advance for Shipping)">(مع عربون لتأكيد الشحن)</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-regular fa-star"></i>
+                    <div>
+                        <h4 class="lang-text" data-ar="جودة فاخرة" data-en="Premium Quality">جودة فاخرة</h4>
+                        <p class="lang-text" data-ar="لأنك تستحق الأفضل" data-en="Because You Deserve the Best">لأنك تستحق الأفضل</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT POPUP MODAL ================= -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 class="lang-text" data-ar="تواصل معنا عبر" data-en="CONNECT WITH US">تواصل معنا عبر</h3>
+            <div class="popup-socials">
+                <a href="https://instagram.com/waqt.watch_" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://tiktok.com/@waqt.watch_" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="mailto:contact@waqt.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="WAQT Logo">
+            <span>WAQT <small>TIMEPIECES</small></span>
+        </div>
+        <div class="social-icons">
+            <a href="https://instagram.com/waqt.watch_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com/@waqt.watch_" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="mailto:contact@waqt.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="#home" class="lang-text" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+            <a href="#collection" class="lang-text" data-ar="المتجر" data-en="Shop">المتجر</a>
+            <a href="#about" class="lang-text" data-ar="من نحن" data-en="About">من نحن</a>
+            <a href="#" id="footer-contact" class="lang-text" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
+        </div>
+        <p class="copyright lang-text" data-ar="© 2026 WAQT Timepieces. جميع الحقوق محفوظة." data-en="© 2026 WAQT Timepieces. All rights reserved.">© 2026 WAQT Timepieces. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- ملف الجافاسكريبت -->
+    <script src="js/script.js"></script>
+    <!-- ================= CHECKOUT MODAL (نموذج إتمام الشراء المطور) ================= -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content checkout-modal-content">
+        <span class="close-modal checkout-close">&times;</span>
+        <h3 class="lang-text" data-ar="إتمام طلب الشراء" data-en="COMPLETE CHECKOUT">إتمام طلب الشراء</h3>
+        <form id="checkout-form">
+            <!-- الاسم -->
+            <div class="form-group">
+                <label class="lang-text" data-ar="الاسم بالكامل" data-en="Full Name">الاسم بالكامل</label>
+                <input type="text" required placeholder="أدخل اسمك الكريم" class="lang-input" data-ar-placeholder="أدخل اسمك الكريم" data-en-placeholder="Enter your full name">
+            </div>
+            
+            <!-- البريد الإلكتروني -->
+            <div class="form-group">
+                <label class="lang-text" data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</label>
+                <input type="email" required placeholder="example@gmail.com" class="lang-input" data-ar-placeholder="example@gmail.com" data-en-placeholder="example@gmail.com">
+            </div>
+            
+            <!-- رقم الهاتف (التحقق الذكي) -->
+            <div class="form-group">
+                <label class="lang-text" data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+                <input type="tel" id="phone-input" required placeholder="010xxxxxxxx" pattern="^01[0-2,5][0-9]{8}$" title="يجب أن يكون رقم هاتف مصري صحيح (11 رقم)" class="lang-input" data-ar-placeholder="010xxxxxxxx" data-en-placeholder="010xxxxxxxx">
+                <small class="error-msg lang-text" style="color: #ff4d4d; display: none;" data-ar="رقم الهاتف غير صحيح (مثال: 01012345678)" data-en="Invalid phone number (e.g., 01012345678)">رقم الهاتف غير صحيح</small>
+            </div>
+
+           <!-- حقل المحافظات المطور -->
+<div class="form-group">
+    <label class="lang-text" data-ar="المتطقة / المحافظة" data-en="Region / Governorate">المنطقة / المحافظة</label>
+    <select required id="governorate-select" class="lang-input">
+        <!-- الخيار الافتراضي -->
+        <option value="" class="lang-text" data-ar="اختر المحافظة..." data-en="Select Governorate...">اختر المحافظة...</option>
+        
+        <!-- محافظات مصر (مزدوجة اللغة) -->
+        <option value="Cairo" class="lang-text" data-ar="القاهرة" data-en="Cairo">القاهرة</option>
+        <option value="Giza" class="lang-text" data-ar="الجيزة" data-en="Giza">الجيزة</option>
+        <option value="Alexandria" class="lang-text" data-ar="الإسكندرية" data-en="Alexandria">الإسكندرية</option>
+        <option value="Dakahlia" class="lang-text" data-ar="الدقهلية" data-en="Dakahlia">الدقهلية</option>
+        <option value="Red Sea" class="lang-text" data-ar="البحر الأحمر" data-en="Red Sea">البحر الأحمر</option>
+        <option value="Beheira" class="lang-text" data-ar="البحيرة" data-en="Beheira">البحيرة</option>
+        <option value="Fayoum" class="lang-text" data-ar="الفيوم" data-en="Fayoum">الفيوم</option>
+        <option value="Gharbiya" class="lang-text" data-ar="الغربية" data-en="Gharbiya">الغربية</option>
+        <option value="Ismailia" class="lang-text" data-ar="الإسماعيلية" data-en="Ismailia">الإسماعيلية</option>
+        <option value="Monufia" class="lang-text" data-ar="المنوفية" data-en="Monufia">المنوفية</option>
+        <option value="Minya" class="lang-text" data-ar="المنيا" data-en="Minya">المنيا</option>
+        <option value="Qalyubia" class="lang-text" data-ar="القليوبية" data-en="Qalyubia">القليوبية</option>
+        <option value="New Valley" class="lang-text" data-ar="الوادي الجديد" data-en="New Valley">الوادي الجديد</option>
+        <option value="Sharqia" class="lang-text" data-ar="الشرقية" data-en="Sharqia">الشرقية</option>
+        <option value="Suez" class="lang-text" data-ar="السويس" data-en="Suez">السويس</option>
+        <option value="Aswan" class="lang-text" data-ar="أسوان" data-en="Aswan">أسوان</option>
+        <option value="Asyut" class="lang-text" data-ar="أسيوط" data-en="Asyut">أسيوط</option>
+        <option value="Beni Suef" class="lang-text" data-ar="بني سويف" data-en="Beni Suef">بني سويf</option>
+        <option value="Port Said" class="lang-text" data-ar="بورسعيد" data-en="Port Said">بورسعيد</option>
+        <option value="Damietta" class="lang-text" data-ar="دمياط" data-en="Damietta">دمياط</option>
+        <option value="South Sinai" class="lang-text" data-ar="جنوب سيناء" data-en="South Sinai">جنوب سيناء</option>
+        <option value="Kafr El Sheikh" class="lang-text" data-ar="كفر الشيخ" data-en="Kafr El Sheikh">كفر الشيخ</option>
+        <option value="Matruh" class="lang-text" data-ar="مطروح" data-en="Matruh">مطروح</option>
+        <option value="Luxor" class="lang-text" data-ar="الأقصر" data-en="Luxor">الأقصر</option>
+        <option value="Qena" class="lang-text" data-ar="قنا" data-en="Qena">قنا</option>
+        <option value="North Sinai" class="lang-text" data-ar="شمال سيناء" data-en="North Sinai">شمال سيناء</option>
+        <option value="Sohag" class="lang-text" data-ar="سوهاج" data-en="Sohag">سوهاج</option>
+        
+        <!-- الخيار الذكي: مكان آخر -->
+        <option value="Other" id="other-gov-option" class="lang-text" data-ar="مكان آخر (كتابة يدوية)" data-en="Other (Manual Entry)">مكان آخر (كتابة يدوية)</option>
+    </select>
+</div>
+
+<!-- حقل إضافي للكتابة اليدوية (مخفي افتراضياً) -->
+<div class="form-group" id="manual-governorate-group" style="display: none;">
+    <label class="lang-text" data-ar="أدخل اسم المنطقة/المحافظة" data-en="Enter Region/Governorate Name">أدخل اسم المنطقة/المحافظة</label>
+    <input type="text" id="manual-governorate-input" placeholder="مثال: خارج مصر، أو مدينة أخرى" class="lang-input" data-ar-placeholder="مثال: خارج مصر، أو مدينة أخرى" data-en-placeholder="e.g., Outside Egypt, or another city">
+</div>
+
+            <!-- العنوان بالتفصيل -->
+            <div class="form-group">
+                <label class="lang-text" data-ar="العنوان بالتفصيل" data-en="Detailed Address">العنوان بالتفصيل</label>
+                <textarea required placeholder="الشارع، رقم المبنى، الشقة..." class="lang-input" data-ar-placeholder="الشارع، رقم المبنى، الشقة..." data-en-placeholder="Street, building no., apartment..."></textarea>
+            </div>
+
+            <!-- زر التأكيد -->
+            <button type="submit" class="submit-order-btn lang-text" data-ar="تأكيد الطلب والدفع عند الاستلام" data-en="Confirm Order & Cash on Delivery">تأكيد الطلب والدفع عند الاستلام</button>
+        </form>
+    </div>
+</div>
+<<!-- ================= ADMIN PASSWORD MODAL (مودال كلمة المرور الخفي) ================= -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content" style="max-width: 350px; text-align: center;">
+            <span class="close-modal password-close">&times;</span>
+            <h3 style="color: var(--waqt-gold); margin-bottom: 15px; font-size: 1.1rem;">أدخل كلمة سر لوحة التحكم</h3>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <input type="password" id="admin-pass-input" placeholder="كلمة المرور..." style="padding: 10px; background: #000; border: 1px solid var(--waqt-gold); color: #fff; text-align: center; border-radius: 5px; outline: none;">
+                <button type="button" id="password-submit-btn" class="checkout-btn" style="width: 100%;">دخول</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<!-- ================= ADMIN PANEL MODAL (لوحة التحكم) ================= -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content" style="max-width: 600px; text-align: right;">
+            <span class="close-modal">&times;</span>
+            <h3 style="color: var(--waqt-gold); margin-bottom: 20px;">لوحة تحكم الساعات (إضافة ومسح)</h3>
+            
+            <!-- نموذج إضافة ساعة جديدة -->
+            <form id="add-product-form" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 20px;">
+                <h4 style="font-size: 0.9rem; color: #fff;">إضافة ساعة جديدة</h4>
+                <input type="text" id="new-name" placeholder="اسم الساعة (مثلاً: SEIKO 5)" required style="padding: 8px; background: #000; border: 1px solid #333; color: #fff;">
+                <input type="number" id="new-price" placeholder="السعر بـ EGP (مثلاً: 4250)" required style="padding: 8px; background: #000; border: 1px solid #333; color: #fff;">
+                <input type="text" id="new-img" placeholder="رابط الصورة (مثلاً: assets/images/watch1.png)" required style="padding: 8px; background: #000; border: 1px solid #333; color: #fff;">
+                <input type="text" id="new-type" placeholder="نوع الحركة (أوتوماتيك / كوارتز)" required style="padding: 8px; background: #000; border: 1px solid #333; color: #fff;">
+                <button type="submit" class="checkout-btn" style="margin-top: 5px;">إضافة للموقع فوراً</button>
+            </form>
+
+            <!-- قائمة الساعات الحالية للمسح -->
+            <h4 style="font-size: 0.9rem; color: #fff; margin-bottom: 10px;">الساعات الحالية (اضغط مسح لحذفها)</h4>
+            <div id="admin-products-list" style="max-height: 200px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px;">
+                <!-- يتم تعبئتها بالجافاسكريبت -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
