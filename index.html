@@ -35,18 +35,50 @@
 </div>
     </header>
 
-    <!-- ================= HERO SECTION ================= -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-logo">
-                <img src="https://i.postimg.cc/ZnTn0gkN/Minimalist-wqt-WAQT-Logo.png" alt="WAQT">
-                <span class="brand-sub">W A Q T <hr><span>TIMEPIECES</span></span>
-            </div>
-            <p class="hero-tagline lang-text" data-ar="أكثر من مجرد وقت... إنه نمط حياة" data-en="MORE THAN JUST TIME<br>IT'S A LIFESTYLE">أكثر من مجرد وقت... إنه نمط حياة</p>
-            <a href="#collection" class="btn-rolex lang-text" data-ar="اكتشف المجموعة <i class='fa-solid fa-chevron-right'></i>" data-en="SHOP NOW <i class='fa-solid fa-chevron-right'></i>">اكتشف المجموعة <i class="fa-solid fa-chevron-right"></i></a>
-        </div>
-    </section>
+    <!-- Hero Section -->
+<section class="hero" id="home">
+    <!-- خلفيات السلايدر -->
+    <div class="hero-slider">
+    <div class="hero-slide active" style="background-image: url('assets/images/backeground1.png')"></div>
+    <div class="hero-slide" style="background-image: url('assets/images/backeground2.png')"></div>
+    <div class="hero-slide" style="background-image: url('assets/images/backeground3.png')"></div>
+</div>
+
+    <div class="hero-overlay"></div>
+
+    <!-- أسهم التنقل يمين ويسار -->
+    <button class="slider-btn prev-btn" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="slider-btn next-btn" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+
+   <div class="hero-content">
+    <!-- اللوجو -->
+    <img src="https://i.postimg.cc/ZnTn0gkN/Minimalist-wqt-WAQT-Logo.png" alt="WAQT Logo" class="hero-main-logo">
+    
+    <!-- اسم البراند -->
+    <h1 class="hero-title">W A Q T</h1>
+    
+    <!-- الخط الفاصل -->
+    <hr class="hero-divider">
+    
+    <!-- الكلمة اللي تحت الخط -->
+    <h2 class="hero-subtitle">TIMEPIECES</h2>
+    
+    <!-- الجملة الوصفية -->
+    <p class="hero-tagline">أكثر من مجرد وقت... إنه نمط حياة</p>
+    
+    <!-- زرار اكتشف المجموعة -->
+    <a href="#collection" class="hero-btn">
+        <i class="fa-solid fa-chevron-left"></i> اكتشف المجموعة
+    </a>
+</div>
+
+    <!-- نقاط التنقل بالأسفل -->
+    <div class="slider-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+    </div>
+</section>
 
     <!-- ================= ABOUT SECTION (نبذة عن البراند) ================= -->
     <section class="about-section" id="about">
@@ -162,46 +194,45 @@
 </div>
     </section>
 
-    <!-- ================= WHY CHOOSE WAQT ================= -->
-    <section class="why-choose">
-        <div class="why-images">
-            <img src="assets/images/box1.png" alt="Waqt Box Open">
-            <img src="assets/images/box2.png" alt="Waqt Box Closed">
-        </div>
-        <div class="why-content">
-            <h2 class="lang-text" data-ar="لماذا تختار وقت؟" data-en="WHY CHOOSE WAQT?">لماذا تختار وقت؟</h2>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <i class="fa-solid fa-shield-check"></i>
-                    <div>
-                        <h4 class="lang-text" data-ar="منتجات أصلية" data-en="Original Products">منتجات أصلية</h4>
-                        <p class="lang-text" data-ar="أصالة مضمونة 100%" data-en="100% Authentic">أصالة مضمونة 100%</p>
-                    </div>
+    <!-- Why Choose WAQT -->
+<section class="why-choose">
+    <div class="why-images">
+        <img src="assets/images/box2.png" alt="WAQT Luxury Box">
+    </div>
+    <div class="why-content">
+        <h2>لماذا تختار وقت؟</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                    <h4>دعم عملاء سريع</h4>
+                    <p>موجودون لأجلك دائماً</p>
                 </div>
-                <div class="feature-box">
-                    <i class="fa-solid fa-headset"></i>
-                    <div>
-                        <h4 class="lang-text" data-ar="دعم عملاء سريع" data-en="Fast Customer Support">دعم عملاء سريع</h4>
-                        <p class="lang-text" data-ar="موجودون لأجلك دائماً" data-en="Always Here for You">موجودون لأجلك دائماً</p>
-                    </div>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <h4>منتجات أصلية</h4>
+                    <p>أصالة مضمونة 100%</p>
                 </div>
-                <div class="feature-box">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <div>
-                        <h4 class="lang-text" data-ar="الدفع عند الاستلام" data-en="Cash on Delivery">الدفع عند الاستلام</h4>
-                        <p class="lang-text" data-ar="(مع عربون لتأكيد الشحن)" data-en="(With Advance for Shipping)">(مع عربون لتأكيد الشحن)</p>
-                    </div>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-star"></i>
+                <div>
+                    <h4>جودة فاخرة</h4>
+                    <p>لأنك تستحق الأفضل</p>
                 </div>
-                <div class="feature-box">
-                    <i class="fa-regular fa-star"></i>
-                    <div>
-                        <h4 class="lang-text" data-ar="جودة فاخرة" data-en="Premium Quality">جودة فاخرة</h4>
-                        <p class="lang-text" data-ar="لأنك تستحق الأفضل" data-en="Because You Deserve the Best">لأنك تستحق الأفضل</p>
-                    </div>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <h4>الدفع عند الاستلام</h4>
+                    <p>مع عروض التأكيد الشحن</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ================= CONTACT POPUP MODAL ================= -->
     <div id="contactModal" class="modal">

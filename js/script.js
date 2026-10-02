@@ -472,5 +472,65 @@ document.addEventListener('DOMContentLoaded', () => {
     // تهيئة أولية
     renderProducts();
     updateCartUI();
+    // ==============================================================================
+// منطق سلايدر الهيرو (Hero Image Slider)
+// ==============================================================================
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.getElementById('prevSlide');
+const nextBtn = document.getElementById('nextSlide');
+let currentSlide = 0;
+let slideInterval;
+
+function showSlide(index) {
+    if (index >= slides.length) currentSlide = 0;
+    else if (index < 0) currentSlide = slides.length - 1;
+    else currentSlide = index;
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[currentSlide].classList.add('active');
+    if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+}
+
+function nextSlideFunc() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlideFunc() {
+    showSlide(currentSlide - 1);
+}
+
+if (nextBtn) nextBtn.addEventListener('click', () => {
+    nextSlideFunc();
+    resetInterval();
+});
+
+if (prevBtn) prevBtn.addEventListener('click', () => {
+    prevSlideFunc();
+    resetInterval();
+});
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        showSlide(index);
+        resetInterval();
+    });
+});
+
+// التقليب التلقائي كل 4 ثوانٍ
+function startSlideInterval() {
+    slideInterval = setInterval(nextSlideFunc, 4000);
+}
+
+function resetInterval() {
+    clearInterval(slideInterval);
+    startSlideInterval();
+}
+
+if (slides.length > 0) {
+    startSlideInterval();
+}
 
 });

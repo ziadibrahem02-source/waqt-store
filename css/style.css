@@ -202,12 +202,94 @@ header.scrolled {
     z-index: 1;
 }
 
-.hero-content {
+/* تصغير طول الـ Hero وتفعيل السلايدر */
+.hero {
     position: relative;
-    z-index: 2;
+    height: 70vh; /* تصغير الطول زي ما طلبت */
+    min-height: 450px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* أسهم التنقل */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--waqt-gold);
+    color: var(--waqt-gold);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.slider-btn:hover {
+    background: var(--waqt-gold);
+    color: var(--bg-black);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* النقاط بالأسفل */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: var(--waqt-gold);
+    width: 25px;
+    border-radius: 5px;
 }
 
 .hero-logo img {
@@ -398,26 +480,29 @@ header.scrolled {
     color: var(--bg-black);
 }
 
-/* Why Choose WAQT */
+/* Why Choose WAQT Section */
 .why-choose {
     display: flex;
     flex-wrap: wrap;
     background: #080808;
     border-top: 1px solid #1a1a1a;
     border-bottom: 1px solid #1a1a1a;
+    overflow: hidden;
 }
 
+/* تنسيق صندوق الصور الواحد في قسم لماذا تختارنا */
 .why-images {
     flex: 1;
     min-width: 300px;
-    display: flex;
-    background: #030303;
+    height: 480px; /* ارتفاع ثابت ومثالي للصورة */
+    overflow: hidden;
 }
 
 .why-images img {
-    width: 50%;
-    object-fit: cover;
-    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لملء المساحة بالكامل بدون أي تشوه */
+    display: block;
 }
 
 .why-content {
@@ -773,4 +858,72 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
+    /* تظهير الكلام في منتصف الشاشة فوق السلايدر */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20 !important; /* ده اللي هيخليه يظهر غصب عن أي صورة */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-main-logo {
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    color: #c5a97d; /* اللون الذهبي */
+    font-size: 2.2rem;
+    letter-spacing: 12px;
+    margin: 0;
+    font-family: serif;
+}
+
+.hero-divider {
+    width: 250px;
+    border: 0;
+    height: 1px;
+    background-color: #c5a97d;
+    margin: 15px 0;
+}
+
+.hero-subtitle {
+    color: #c5a97d;
+    font-size: 1.5rem;
+    letter-spacing: 8px;
+    margin: 0 0 25px 0;
+    font-family: serif;
+    font-weight: normal;
+}
+
+.hero-tagline {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+}
+
+.hero-btn {
+    border: 1px solid #c5a97d;
+    color: #c5a97d;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    background: #c5a97d;
+    color: #000;
+}
 }
