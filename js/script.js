@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 langBtn.textContent = 'EN';
 
                 elementsToTranslate.forEach(element => {
-                    if (element.getAttribute('data-en')) {
+                    if (element.getAttribute('data-ar')) {
                         element.innerHTML = element.getAttribute('data-ar');
                     }
                 });
