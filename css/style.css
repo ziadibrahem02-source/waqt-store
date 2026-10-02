@@ -692,3 +692,85 @@ footer {
 .submit-order-btn:hover {
     opacity: 0.9;
 }
+/* ============================================================================== */
+/* التعديلات والمتجاوب للشاشات الصغيرة والموبايل (Responsive Media Queries) */
+/* ============================================================================== */
+
+@media (max-width: 992px) {
+    /* تعديل الهيدر والنافبار للموبايل */
+    header {
+        padding: 12px 20px;
+    }
+    
+    .nav-center {
+        display: none; /* أو ممكن تحولها لقائمة منسدلة لو حابب، بس الأفضل إخفاؤها أو تصغير الـ gap */
+    }
+
+    /* قسم لماذا تختارنا (Why Choose) */
+    .why-choose {
+        flex-direction: column;
+    }
+
+    .why-images {
+        min-height: 250px;
+    }
+
+    .why-content {
+        padding: 40px 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* عرض المميزات تحت بعضها على الموبايل */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* تصغير العناوين والمسافات للشاشات الصغيرة جداً */
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-content h1, .hero-logo img {
+        height: 60px;
+    }
+
+    .brand-sub {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-tagline {
+        font-size: 0.85rem;
+        padding: 0 15px;
+    }
+
+    /* الأقسام السريعة تحت الهيرو */
+    .quick-categories {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px 5%;
+    }
+
+    /* شبكة المنتجات تعرض بطارية مناسبة للموبايل */
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    /* المودال ونوافذ الشراء تملى شاشة الموبايل باحترافية */
+    .modal-content, 
+    .cart-modal-content, 
+    .checkout-modal-content {
+        width: 95% !important;
+        padding: 25px 15px !important;
+    }
+
+    /* الفوتر */
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
