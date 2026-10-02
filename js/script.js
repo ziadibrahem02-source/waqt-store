@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. تأثير النافبار عند التمرير (Navbar Scrolled Effect)
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
+        if (!navbar) return;
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const waqtLogo = document.getElementById('waqt-logo');
     const adminPassInput = document.getElementById('admin-pass-input');
     const passwordSubmitBtn = document.getElementById('password-submit-btn');
+    const passwordForm = document.getElementById('passwordForm');
 
     const ADMIN_PASSWORD = "zyad_3my"; // كلمة المرور الخاصة بك
 
@@ -133,72 +135,41 @@ document.addEventListener('DOMContentLoaded', () => {
                         adminPassInput.value = '';
                         adminPassInput.focus();
                     }
-                } else {
-                    alert('خطأ: مودال الباسورد غير موجود في صفحة الـ HTML!');
                 }
             }
         });
     }
 
-    // زر الدخول
+    // دالة موحدة للتحقق من كلمة المرور
+    function handleAdminLogin(e) {
+        if (e) e.preventDefault();
+        const enteredValue = adminPassInput ? adminPassInput.value.trim() : '';
+        
+        if (enteredValue === ADMIN_PASSWORD) {
+            if (passwordModal) passwordModal.style.display = 'none';
+            
+            renderAdminList();
+            
+            if (adminModal) {
+                adminModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+            if (adminPassInput) adminPassInput.value = '';
+        } else {
+            alert('كلمة المرور غير صحيحة!');
+            if (adminPassInput) {
+                adminPassInput.value = '';
+                adminPassInput.focus();
+            }
+        }
+    }
+
     if (passwordSubmitBtn) {
-        passwordSubmitBtn.onclick = function() {
-            const enteredValue = adminPassInput ? adminPassInput.value.trim() : '';
-            
-            if (enteredValue === ADMIN_PASSWORD) {
-                if (passwordModal) passwordModal.style.display = 'none';
-                
-                // تحديث قائمة المنتجات وفتح لوحة التحكم
-                if (typeof renderAdminList === 'function') {
-                    renderAdminList();
-                }
-                
-                if (adminModal) {
-                    adminModal.style.display = 'flex';
-                } else {
-                    alert('خطأ: مودال لوحة التحكم غير موجود في صفحة الـ HTML!');
-                }
-            } else {
-                alert('كلمة المرور غير صحيحة!');
-                if (adminPassInput) {
-                    adminPassInput.value = '';
-                    adminPassInput.focus();
-                }
-            }
-        };
+        passwordSubmitBtn.addEventListener('click', handleAdminLogin);
     }
 
-    if(passwordForm) {
-        passwordForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // منع إعادة تحميل الصفحة تماماً
-            
-            const enteredPass = adminPassInput ? adminPassInput.value.trim() : '';
-
-            if (enteredPass === ADMIN_PASSWORD) {
-                // 1. إغلاق مودال الباسورد
-                if(passwordModal) {
-                    passwordModal.style.display = 'none';
-                }
-                
-                // 2. تحديث قائمة المنتجات في لوحة التحكم
-                renderAdminList();
-                
-                // 3. فتح مودال لوحة التحكم بصورة قاطعة
-                if(adminModal) {
-                    adminModal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                }
-                
-                // 4. تصفير خانة الباسورد
-                if(adminPassInput) adminPassInput.value = '';
-            } else {
-                alert('كلمة المرور غير صحيحة!');
-                if(adminPassInput) {
-                    adminPassInput.value = '';
-                    adminPassInput.focus();
-                }
-            }
-        });
+    if (passwordForm) {
+        passwordForm.addEventListener('submit', handleAdminLogin);
     }
 
     // عرض الساعات في الموقع الرئيسية
@@ -249,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // إضافة ساعة جديدة
     const addProductForm = document.getElementById('add-product-form');
-    if(addProductForm) {
+    if (addProductForm) {
         addProductForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('new-name').value;
@@ -269,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // مسح ساعة
     window.deleteProduct = function(index) {
-        if(confirm('هل أنت متأكد من مسح هذه الساعة؟')) {
+        if (confirm('هل أنت متأكد من مسح هذه الساعة؟')) {
             products.splice(index, 1);
             localStorage.setItem('waqt_products', JSON.stringify(products));
             renderProducts();
@@ -312,10 +283,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let totalPrice = 0;
 
         if (cart.length === 0) {
-            if(cartItemsContainer) cartItemsContainer.innerHTML = '<p class="empty-cart-msg" style="text-align:center; color:#aaa; padding:15px;">عربة التسوق فارغة حالياً.</p>';
+            if (cartItemsContainer) cartItemsContainer.innerHTML = '<p class="empty-cart-msg" style="text-align:center; color:#aaa; padding:15px;">عربة التسوق فارغة حالياً.</p>';
             removeCartActions();
         } else {
-            if(cartItemsContainer) cartItemsContainer.innerHTML = '';
+            if (cartItemsContainer) cartItemsContainer.innerHTML = '';
             cart.forEach((item, index) => {
                 totalCount += item.quantity;
                 totalPrice += item.price * item.quantity;
@@ -332,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <button onclick="window.removeItem(${index})" style="background:none; border:none; color:#ff4d4d; cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
                 `;
-                if(cartItemsContainer) cartItemsContainer.appendChild(itemRow);
+                if (cartItemsContainer) cartItemsContainer.appendChild(itemRow);
             });
             addCartActions();
         }
@@ -348,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addCartActions() {
         let cartModalContent = document.querySelector('#cartModal .modal-content');
-        if(!cartModalContent) return;
+        if (!cartModalContent) return;
         
         let actionsDiv = cartModalContent.querySelector('.cart-actions');
         if (!actionsDiv) {
@@ -371,11 +342,16 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
-        document.getElementById('continue-shopping').onclick = closeModalFunc;
-        document.getElementById('proceed-checkout').onclick = () => {
-            closeModalFunc();
-            openModal('checkout');
-        };
+        const contShopBtn = document.getElementById('continue-shopping');
+        const procCheckBtn = document.getElementById('proceed-checkout');
+
+        if (contShopBtn) contShopBtn.onclick = closeModalFunc;
+        if (procCheckBtn) {
+            procCheckBtn.onclick = () => {
+                closeModalFunc();
+                openModal('checkout');
+            };
+        }
     }
 
     function removeCartActions() {
@@ -399,14 +375,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return /^01[0-2,5][0-9]{8}$/.test(phone);
     };
 
-    if(phoneInput) {
+    if (phoneInput) {
         phoneInput.addEventListener('input', (e) => {
             if (validateEgyptianPhone(e.target.value)) {
                 phoneInput.style.borderColor = '#c5a97d';
-                if(phoneErrorMsg) phoneErrorMsg.style.display = 'none';
+                if (phoneErrorMsg) phoneErrorMsg.style.display = 'none';
             } else {
                 phoneInput.style.borderColor = '#ff4d4d';
-                if(phoneErrorMsg) phoneErrorMsg.style.display = 'block';
+                if (phoneErrorMsg) phoneErrorMsg.style.display = 'block';
             }
         });
     }
@@ -414,11 +390,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (governorateSelect) {
         governorateSelect.addEventListener('change', (e) => {
             if (e.target.value === 'Other') {
-                if(manualGovGroup) manualGovGroup.style.display = 'flex';
-                if(manualGovInput) manualGovInput.setAttribute('required', 'required');
+                if (manualGovGroup) manualGovGroup.style.display = 'flex';
+                if (manualGovInput) manualGovInput.setAttribute('required', 'required');
             } else {
-                if(manualGovGroup) manualGovGroup.style.display = 'none';
-                if(manualGovInput) manualGovInput.removeAttribute('required');
+                if (manualGovGroup) manualGovGroup.style.display = 'none';
+                if (manualGovInput) manualGovInput.removeAttribute('required');
             }
         });
     }
@@ -430,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const phone = phoneInput ? phoneInput.value : '';
             if (!validateEgyptianPhone(phone)) {
                 alert('يرجى إدخال رقم هاتف مصري صحيح للمتابعة (11 رقم).');
-                if(phoneInput) phoneInput.focus();
+                if (phoneInput) phoneInput.focus();
                 return;
             }
 
@@ -439,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCartUI();
             closeModalFunc();
             checkoutForm.reset();
-            if(manualGovGroup) manualGovGroup.style.display = 'none';
+            if (manualGovGroup) manualGovGroup.style.display = 'none';
         });
     }
 
@@ -466,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 inputsToTranslate.forEach(input => {
-                    if(input.getAttribute('data-en-placeholder')) {
+                    if (input.getAttribute('data-en-placeholder')) {
                         input.placeholder = input.getAttribute('data-en-placeholder');
                     }
                 });
@@ -476,12 +452,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 langBtn.textContent = 'EN';
 
                 elementsToTranslate.forEach(element => {
-                    if (element.getAttribute('data-ar')) {
+                    if (element.getAttribute('data-en')) {
                         element.innerHTML = element.getAttribute('data-ar');
                     }
                 });
                 inputsToTranslate.forEach(input => {
-                    if(input.getAttribute('data-ar-placeholder')) {
+                    if (input.getAttribute('data-ar-placeholder')) {
                         input.placeholder = input.getAttribute('data-ar-placeholder');
                     }
                 });
